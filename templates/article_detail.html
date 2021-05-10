@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block string %}
+
+{% for article in articles  %}<!-- https://getbootstrap.com/docs/4.0/examples/sticky-footer/   buradaki sayfa kaynağından alınıp düzenlemeler yapıldı bodyler arasındakilere-->
+    <main role="main" class="container">
+      <h1 class="mt-5">{{article.title}}</h1>
+      <p class="lead">{{article.author}}</p>
+      <p>{{article.content|safe}}</p> <!-- |safe ibaresi html code larından decode edilmeden veri tabanına gönderilen ifadeleri sitede yayınlarken o kodları göstermiyor-->
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Başkan'a Mektup 2020</span>
+      </div>
+    </footer>
+{% endfor %}
+
+{% endblock string %}

@@ -1,0 +1,37 @@
+veri tabanı için xampp control panel'i kullanıyoruz mysql i aktif ettikten sonra admin'e
+bastık ve veri tabanı yönetim sayfasına geldik 
+yeni diyoruz soldan
+ismini yazdık ve tipini utf8_general_ci olarak belirledik
+tablo adı users olan 5 sütunlu bir tablo ekledik
+id int sağ taraftı A_I(AUTO INCREMENT) yi işaretliyoruz ve index PRIMARY de kalıyor
+A_I verilen her id yi otomatik olarak 1 arttırarak kaydeder
+name username email password text şeklinde kaydedildi A_I seçilmedi
+aşşadan kaydete basıyoruz
+siteden denemelik ekledik bi tane devkodblog->users->Ekle
+
+-----------------Python dosyamızı veritabanımızla entegre etmek----------------------
+google'a flask mysql documentation yaptırdık
+ilk olarak cmd den "pip install flask-mysqldb" yapıyoruz
+sonra from flask_mysqldb import MySQL olarak projeye import ettik
+https://flask-mysqldb.readthedocs.io/en/latest/ 
+bu sitedeki adımları yapıyoruz
+
+
+
+
+
+
+add article kısmı için--->>>>>>>
+
+veri tabanında users harici yeni bir tablo oluşturuyoruz articles adında
+5 sütun ekledik
+ilk değer id sonra int  A_I işaretlenecek ve boş index PRIMARY olarak seçilecek
+title text olacak
+author text olacak (yazar)
+content text (makale içeriği)
+create_date TIMESTAMP varsayılanı CURRENT_TIMESTAMP (makale eklendiğinde oto tarih atması)
+aşşağıya inip kaydede bastık
+
+
+
+

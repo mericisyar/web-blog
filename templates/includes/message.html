@@ -1,0 +1,18 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    
+    {% for category, message in messages %}
+      <div class="alert alert-{{category}}" role="alert">
+      <center><strong>{{message}}</strong></center> 
+      </div>
+    {% endfor %}<!-- strongların arasına yazdıgımız message python dosyasından gelen kayıt işlemi başarılı
+    yı taşıyan message dır kategorisi de bellidir başka kategoride yine message oluşturdugumuzda
+    bu html i iptal etmeden orada belirttiğimiz mesajı yayınlayacaktır-->
+    
+  {% endif %}
+{% endwith %}
+
+<!-- message.html flash mesajları için hazırlandı bu container ile layout.html in içine
+include ettik çünkü layout.html i diğer sayfalarımızda extend etmiştik böylelikle
+layout.html içine flash mesajını include edersek layout.html in extend edildiği her 
+sayfada flash mesajı oluşturabiliriz.--> 

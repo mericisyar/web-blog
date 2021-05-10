@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block string %}
+<center><h1>Ana Sayfa</h1></center>
+<hr>
+<center><p>Lorem Ipsum is simply dummy text of the printing and typesetting 
+    industry.
+     Lorem Ipsum has been the industry's standard dummy text ever since 
+     the 1500s, when an unknown printer took a galley of type and scrambled
+      it to make a type specimen book.</p><hr></center>
+
+<p>{{on}}</p>
+
+{% if on==10 %} <!--if yazımı html de böyle-->
+<p>Cevap:10</p>
+{% elif on==20 %} <!--elif endif blogundan önce araya da yazılabilir-->
+<p>Cevap:20</p>
+{% else %}
+<p>Cevap bilinemedi</p><!--else de aynı-->
+{% endif %}
+
+<p>Liste</p>
+{% for i in liste %}<!--for döngüsü-->
+<li><p>{{i}}</p></li>
+{% endfor %}
+
+
+<p>Demet</p>
+{% for i in demet %}
+<li><p>{{i}}</p></li>
+{% endfor %}
+
+<p>Veritabanı</p>
+{% for i in sozluk %} <!--python dosyasaında tanımlı sozluk burada for ile yazdırılması-->
+<li><p>Kaydedilme Tarihi: {{i.KaydedilmeTarihi}} - Yazar: {{i.Yazar}} - Son Erişim Tarihi: {{i.SonErişimTarihi}}</p></li>
+{% endfor %}
+
+{% endblock string %}

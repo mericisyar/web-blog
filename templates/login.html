@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block string %}
+<center><h1>Giriş Yap</h1></center>
+
+<center>
+{% from "includes/_formhelpers.html" import render_field %}<!--https://flask.palletsprojects.com/en/1.1.x/patterns/wtforms/?highlight=forms    buradaki linkten kopyalandır forms kısmı---->
+<form method=post>
+  <dl>
+    
+    {{ render_field(form.username) }}
+    {{ render_field(form.password) }}
+    
+    
+  </dl>
+  <button type="submit" class="btn btn-success">Giriş Yap</button><!--type submit olması lazım b formları gönderirken falan o kullanılıyo-->
+</form></center>
+{% endblock string %}
+

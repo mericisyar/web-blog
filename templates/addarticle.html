@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block string %}
+<center><h1>Makale Ekle</h1></center>
+
+{% from "includes/_formhelpers.html" import render_field %}<!--https://flask.palletsprojects.com/en/1.1.x/patterns/wtforms/?highlight=forms    buradaki linkten kopyalandır forms kısmı---->
+<form method=post>
+  <dl>
+    {{ render_field(form.title, class = "form-control") }} <!-- class = form-control kısmı girilen satırların sayfada boylu boyunca uzamasını sagladı -->
+    {{ render_field(form.content, class = "form-control") }}
+    
+    
+    
+  </dl>
+  <button type="submit" class="btn btn-dark">Makaleyi Kaydet</button><!--type submit olması lazım b formları gönderirken falan o kullanılıyo-->
+</form>
+
+{% endblock string %}
